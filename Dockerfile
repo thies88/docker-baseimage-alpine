@@ -1,6 +1,7 @@
 FROM alpine:3.10 as rootfs-stage
 MAINTAINER sparkyballs,thelamer
 
+#test
 # environment
 ENV REL=v3.10
 ENV ARCH=x86_64
