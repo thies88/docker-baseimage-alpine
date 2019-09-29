@@ -1,9 +1,8 @@
 A fork of: https://github.com/linuxserver/docker-baseimage-alpine
 
-Image size: 21,5 MB
+Image size: 19,5 MB
 
-Added: repository: added edge(main, community and testing)
-       nano: for editing files in inside container
+Added: repository: edge(main, community and testing)
        
 Package list:
 alpine-baselayout-3.1.2-r0 - Alpine base dir structure and init scripts
