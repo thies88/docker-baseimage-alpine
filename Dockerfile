@@ -2,7 +2,7 @@ FROM alpine:3.10 as rootfs-stage
 MAINTAINER sparkyballs,thelamer
 
 # environment for our temp builder image
-ENV REL=v3.10
+ENV REL=v3.11
 ENV ARCH=x86_64
 ENV MIRROR=http://dl-cdn.alpinelinux.org/alpine
 ENV PACKAGES=alpine-baselayout,\
