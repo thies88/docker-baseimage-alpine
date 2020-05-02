@@ -1,5 +1,5 @@
 FROM alpine:3.10 as rootfs-stage
-MAINTAINER sparkyballs,thelamer
+MAINTAINER thies88
 
 # environment for our temp builder image
 ENV REL=v3.10
