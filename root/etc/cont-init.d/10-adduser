@@ -7,17 +7,16 @@ groupmod -o -g "$PGID" abc
 usermod -o -u "$PUID" abc
 
 echo '
--------------------------------------
-          _         ()
-         | |  ___   _    __
-         | | / __| | |  /  \ 
-         | | \__ \ | | | () |
-         |_| |___/ |_|  \__/
+### Powered by Alpine Linux ###
 
+## Info ##
 
-Brought to you by linuxserver.io
-We gratefully accept donations at:
-https://www.linuxserver.io/donate/
+OS: Alpine
+Always based on latest alpine-base@edge (http://nl.alpinelinux.org/alpine)
+
+Rebuild every week.
+
+## Thies88 ##
 -------------------------------------
 GID/UID
 -------------------------------------'
