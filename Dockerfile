@@ -2,7 +2,7 @@ FROM alpine:3.11 as rootfs-stage
 MAINTAINER thies88
 
 # environment for our temp builder image
-ENV REL=v3.11
+ENV REL=v3.12
 ENV ARCH=x86_64
 ENV MIRROR=http://dl-cdn.alpinelinux.org/alpine
 ENV PACKAGES=alpine-baselayout,\
