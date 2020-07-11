@@ -11,20 +11,6 @@ weekly builds @Saturday at 3:00 (AM)
 	-Packages are updated
 	-Application within image(container) gets updated if new release is available. (Don't manual update Application within container.)
 
-Setup:
-
-docker create \
-  --name=spotweb \
-  -e PUID=1000 \
-  -e PGID=1000 \
-  -e TZ=Europe/Amsterdam \
-  -e APP_URL=/spotweb `#optional` \
-  -p 80:80 \
-  -p 443:443 `#optional` \
-  -v /path/to/config:/config \
-  --restart unless-stopped \
-  thies88/docker-alpine-spotweb
-
 To update your container:
 
 Via Docker Run/Create
