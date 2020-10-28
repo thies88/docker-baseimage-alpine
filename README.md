@@ -4,9 +4,9 @@ Image size: 24,4 MB
 
 Added: repository: edge(main, community and testing)
 
-weekly builds @Saturday at 3:00 (AM)
+Weekly builds @Saturday at 3:00 (AM)
 
--rebuilds new base image from scratch @http://nl.alpinelinux.org/alpine (Alpine 3.12)
+	-rebuilds new base image from scratch @http://nl.alpinelinux.org/alpine (Alpine 3.12)
 	-Base OS is updated
 	-Packages are updated
 	-Application within image(container) gets updated if new release is available. (Don't manual update Application within container.)
