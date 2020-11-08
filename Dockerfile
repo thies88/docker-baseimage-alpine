@@ -49,7 +49,7 @@ ARG OVERLAY_ARCH="amd64"
 
 # environment variables
 ENV PS1="$(whoami)@$(hostname):$(pwd)\\$ " \
-HOME="/root"
+HOME="/config"
 #TERM="xterm"
 
 #Add some repo's
