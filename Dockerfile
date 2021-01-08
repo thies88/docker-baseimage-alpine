@@ -5,7 +5,7 @@ MAINTAINER thies88
 ENV REL=v3.12
 ENV ARCH=x86_64
 #ENV MIRROR=http://dl-cdn.alpinelinux.org/alpine
-ENV MIRROR= http://nl.alpinelinux.org/alpine
+ENV MIRROR=http://nl.alpinelinux.org/alpine
 ENV PACKAGES=alpine-baselayout,\
 alpine-keys,\
 apk-tools,\
