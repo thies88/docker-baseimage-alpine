@@ -4,7 +4,8 @@ MAINTAINER thies88
 # environment for our temp builder image
 ENV REL=v3.12
 ENV ARCH=x86_64
-ENV MIRROR=http://dl-cdn.alpinelinux.org/alpine
+#ENV MIRROR=http://dl-cdn.alpinelinux.org/alpine
+ENV MIRROR= http://nl.alpinelinux.org/alpine
 ENV PACKAGES=alpine-baselayout,\
 alpine-keys,\
 apk-tools,\
@@ -50,7 +51,7 @@ ARG OVERLAY_ARCH="amd64"
 # environment variables
 ENV PS1="$(whoami)@$(hostname):$(pwd)\\$ " \
 HOME="/config"
-#TERM="xterm"
+TERM="xterm"
 
 #Add some repo's
 RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
@@ -64,12 +65,11 @@ RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/
  apk add --no-cache \
 	bash \
 	ca-certificates \
-	#openssl \
 	coreutils \
 	shadow \
-	nano \
+	procps \
 	tzdata && \
-	echo "**** add s6 overlay ****" && \
+ echo "**** add s6 overlay ****" && \
  curl -o \
  /tmp/s6-overlay.tar.gz -L \
 	"https://github.com/just-containers/s6-overlay/releases/download/${OVERLAY_VERSION}/s6-overlay-${OVERLAY_ARCH}.tar.gz" && \
@@ -83,17 +83,17 @@ RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/
 	/app \
 	/config \
 	/defaults && \
+ mv /usr/bin/with-contenv /usr/bin/with-contenvb && \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
  rm -rf \
-	/tmp/* /usr/share/terminfo/*
+	/tmp/* /usr/share/terminfo/* && \
+echo "save packages list to /package-list/package-list.txt to later extract this and add to github" && \
+mkdir -p /package-list && \
+	apk info -vv|sort > /package-list/package-list.txt
 
 # add local files
 COPY root/ /
-
-#save packages list to /package-list/package-list.txt to later extract this and add to github
-RUN mkdir -p /package-list && \
-	apk info -vv|sort > /package-list/package-list.txt
 
 ENTRYPOINT ["/init"]
