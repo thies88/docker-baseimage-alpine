@@ -4,8 +4,8 @@ MAINTAINER thies88
 # environment for our temp builder image
 ENV REL=v3.12
 ENV ARCH=x86_64
-#ENV MIRROR=http://dl-cdn.alpinelinux.org/alpine
-ENV MIRROR=http://nl.alpinelinux.org/alpine
+ENV MIRROR=http://dl-cdn.alpinelinux.org/alpine
+#ENV MIRROR=http://nl.alpinelinux.org/alpine
 ENV PACKAGES=alpine-baselayout,\
 alpine-keys,\
 apk-tools,\
@@ -50,8 +50,8 @@ ARG OVERLAY_ARCH="amd64"
 
 # environment variables
 ENV PS1="$(whoami)@$(hostname):$(pwd)\\$ " \
-HOME="/config" \
-TERM="xterm"
+HOME="/config"
+#TERM="xterm"
 
 #Add some repo's
 RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
@@ -67,7 +67,7 @@ RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/
 	ca-certificates \
 	coreutils \
 	shadow \
-	procps \
+	#procps \
 	tzdata && \
  echo "**** add s6 overlay ****" && \
  curl -o \
@@ -83,7 +83,7 @@ RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/
 	/app \
 	/config \
 	/defaults && \
- mv /usr/bin/with-contenv /usr/bin/with-contenvb && \
+ #mv /usr/bin/with-contenv /usr/bin/with-contenvb && \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
