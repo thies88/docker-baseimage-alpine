@@ -1,0 +1,9 @@
+#! /bin/bash
+
+# if file found (UMASK) set permissions based on this file, else exec original with-contenvb from s6-overlay
+if [[ -f /var/run/s6/container_environment/UMASK ]] && [[ "$(pwdx $$)" =~ "/run/s6/services/" ]]; then
+  umask $(cat /var/run/s6/container_environment/UMASK)
+  exec /usr/bin/with-contenvb "$@"
+else
+  exec /usr/bin/with-contenvb "$@"
+fi

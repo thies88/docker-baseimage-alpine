@@ -44,14 +44,13 @@ LABEL build_version="Alpine-baseimage-from-scratch version:- ${VERSION} Build-da
 LABEL MAINTAINER="thies88, Thnx to: sparkyballs,TheLamer"
 
 # set version for s6 overlay
-#ARG OVERLAY_VERSION="v2.0.0.1"
 ARG OVERLAY_VERSION="v2.1.0.2"
 ARG OVERLAY_ARCH="amd64"
 
 # environment variables
 ENV PS1="$(whoami)@$(hostname):$(pwd)\\$ " \
-HOME="/config"
-#TERM="xterm"
+HOME="/config" \
+TERM="xterm"
 
 #Add some repo's
 RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
@@ -67,7 +66,7 @@ RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/
 	ca-certificates \
 	coreutils \
 	shadow \
-	#procps \
+	procps \
 	tzdata && \
  echo "**** add s6 overlay ****" && \
  curl -o \
@@ -83,7 +82,7 @@ RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/
 	/app \
 	/config \
 	/defaults && \
- #mv /usr/bin/with-contenv /usr/bin/with-contenvb && \
+ mv /usr/bin/with-contenv /usr/bin/with-contenvb && \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
