@@ -7,16 +7,24 @@ groupmod -o -g "$PGID" abc
 usermod -o -u "$PUID" abc
 
 echo '
-### Powered by Alpine Linux ###
+###############                 Powered by Alpine Linux                   ###############
 
-## Info ##
+ █████╗ ██╗     ██████╗ ██╗███╗   ██╗███████╗    ██╗     ██╗███╗   ██╗██╗   ██╗██╗  ██╗
+██╔══██╗██║     ██╔══██╗██║████╗  ██║██╔════╝    ██║     ██║████╗  ██║██║   ██║╚██╗██╔╝
+███████║██║     ██████╔╝██║██╔██╗ ██║█████╗      ██║     ██║██╔██╗ ██║██║   ██║ ╚███╔╝ 
+██╔══██║██║     ██╔═══╝ ██║██║╚██╗██║██╔══╝      ██║     ██║██║╚██╗██║██║   ██║ ██╔██╗ 
+██║  ██║███████╗██║     ██║██║ ╚████║███████╗    ███████╗██║██║ ╚████║╚██████╔╝██╔╝ ██╗
+╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚═╝  ╚═══╝╚══════╝    ╚══════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝
+                                                                                       
+###  Info  ###
 
 OS: Alpine
-Always based on latest alpine-base@edge (http://nl.alpinelinux.org/alpine)
+Source: http://nl.alpinelinux.org/alpine
+Based on latest stable alpine-minirootfs (Currently: v3.12)
 
 Rebuild every week.
 
-## Thies88 ##
+## THEcontainers ##
 -------------------------------------
 GID/UID
 -------------------------------------'
