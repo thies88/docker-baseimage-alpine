@@ -65,8 +65,8 @@ RUN echo @testing http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/
 	bash \
 	ca-certificates \
 	coreutils \
-	shadow \
 	procps \
+	shadow \
 	tzdata && \
  echo "**** add s6 overlay ****" && \
  curl -o \
